@@ -15,11 +15,12 @@ function createSquareElement() {
     // inserisco array 16 random numeri dentro la funzione genera per generare l'array contestualmente alla griglia selezionata.
     const randomNumbers = [];
     while (randomNumbers.length < 16) {
-        const randomNumber = Math.floor(Math.random() * gridSize) + 1;
-        if (!randomNumbers.includes(randomNumber)) {
-            randomNumbers.push(randomNumber);
-        }
-    }
+      const randomNumber = Math.floor(Math.random() * gridSize) + 1;
+      if (!randomNumbers.includes(randomNumber)) {
+          randomNumbers.push(randomNumber);
+          console.log(randomNumbers);
+      }
+  }
   
     for (let i = 0; i < gridSize; i++) {
         let square = createSquareElement();
