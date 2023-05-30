@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+    padding: 2rem;
+}
+
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 900px;
+    height: 900px;
+}
+
+.square {
+    width: calc(900px / 10);
+    height: calc(900px / 10);
+    border: 2px solid white;
+    background-color: rgb(198, 153, 240);
+}
+
+.grid-81 .square {
+    width: calc(900px / 9);
+    height: calc(900px / 9);
+}
+
+
+.grid-49 .square {
+    width: calc(900px / 7);
+    height: calc(900px / 7);
+}
+
+
+.clicked {
+    background-color: lightblue;
+}
+
+#generateButton,
+#gridSizeSelect {
+    /* width: 10rem; */
+    height: 100px;
+    background-color: rgb(181, 118, 240);
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+}
