@@ -27,11 +27,11 @@ function createSquareElement() {
         grid.append(square);
         square.innerText = i + 1;
   
-        square.addEventListener('click', function () {
+        square.addEventListener('click', function myfunction() {
             const squareNumber = i + 1;
             if (randomNumbers.includes(squareNumber)) {
                 this.style.backgroundColor = 'red';
-                square.removeEventListener('click');
+                square.removeEventListener('click', myfunction);
             } else {
                 this.classList.add('clicked');
             }
