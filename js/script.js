@@ -11,8 +11,9 @@ function createSquareElement() {
     const grid = document.getElementById('grid');
     grid.innerHTML = '';
     grid.className = 'grid-' + gridSize;
+    let game= false;
   
-    // inserisco array 16 random numeri dentro la funzione genera per generare l'array contestualmente alla griglia selezionata.
+
     const randomNumbers = [];
     while (randomNumbers.length < 16) {
       const randomNumber = Math.floor(Math.random() * gridSize) + 1;
@@ -28,16 +29,23 @@ function createSquareElement() {
         square.innerText = i + 1;
   
         square.addEventListener('click', function myfunction() {
+            if (!game) {
             const squareNumber = i + 1;
             if (randomNumbers.includes(squareNumber)) {
                 this.style.backgroundColor = 'red';
-                square.removeEventListener('click', myfunction);
-            } else {
+                alert('game over!');
+                game= true;
+                const squares = document.getElementsByClassName('square');
+                for (let j = 0; j < squares.length; j++) {
+                    squares[j].removeEventListener('click', myfunction);
+                  }
+            } 
+             else {
                 this.classList.add('clicked');
             }
+        }
         })
-    }
-  }
-  
+    }  }
+ 
   const generateButton = document.getElementById('generateButton');
   generateButton.addEventListener('click', generateGrid);
